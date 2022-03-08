@@ -24,6 +24,14 @@ db.query(`SELECT * FROM candidates`, (err, rows) => {
     console.log(rows);
 });
 
+// GET a single candidate
+db.query(`SELECT * FROM candidates WHERE id = 1`, (err, row) => {
+    if (err){
+        console.log(err);
+    }
+    console.log(row);
+});
+
 // Default response for any other request (Not Found)
 app.use((req, res) => {
     res.status(404).end();
